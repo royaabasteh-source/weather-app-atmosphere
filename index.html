@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atmosphere - Elegant Weather Insights</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-container">
+        <div class="blob shape1"></div>
+        <div class="blob shape2"></div>
+        <div class="blob shape3"></div>
+    </div>
+    
+    <main class="app-container">
+        <header>
+            <h1>Atmosphere</h1>
+            <p>Your local weather insights</p>
+        </header>
+        
+        <div class="search-section">
+            <div class="select-group">
+                <i class="fa-solid fa-earth-americas"></i>
+                <select id="countrySelect">
+                    <option value="" disabled selected>Loading countries...</option>
+                </select>
+            </div>
+            <div class="select-group" style="margin-top: 1rem;">
+                <i class="fa-solid fa-city"></i>
+                <select id="citySelect" disabled>
+                    <option value="" disabled selected>Select a city</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="loading" class="hidden">
+            <div class="spinner"></div>
+            <p>Fetching weather data...</p>
+        </div>
+
+        <div id="errorMsg" class="error-message hidden">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <span id="errorText">City not found. Please try again.</span>
+        </div>
+
+        <div id="weatherContent" class="weather-card hidden">
+            <div class="current-weather">
+                <div class="weather-main">
+                    <h2 id="locationName">London, UK</h2>
+                    <div class="temp-container">
+                        <i id="weatherIcon" class="fa-solid fa-sun weather-icon"></i>
+                        <span id="temperature">24°</span>
+                    </div>
+                    <p id="weatherDesc">Sunny and warm</p>
+                </div>
+                
+                <div class="weather-details">
+                    <div class="detail-item">
+                        <i class="fa-solid fa-temperature-half"></i>
+                        <div class="detail-info">
+                            <span class="label">Feels like</span>
+                            <span id="feelsLike" class="value">26°</span>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fa-solid fa-droplet"></i>
+                        <div class="detail-info">
+                            <span class="label">Humidity</span>
+                            <span id="humidity" class="value">45%</span>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fa-solid fa-wind"></i>
+                        <div class="detail-info">
+                            <span class="label">Wind</span>
+                            <span id="windSpeed" class="value">12 km/h</span>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fa-solid fa-cloud-showers-heavy"></i>
+                        <div class="detail-info">
+                            <span class="label">Precipitation</span>
+                            <span id="precipitation" class="value">0 mm</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
